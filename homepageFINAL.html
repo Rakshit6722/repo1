@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="T.png">
+    <link rel="stylesheet" href="boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Righteous);
+
+        body {
+            margin: 0px;
+            background-image: url(bg.jpg.jpeg);
+        }
+
+        #searchbar {
+            width: 600px;
+            padding: 5px 20px;
+            height: 30px;
+            background-color: #EDF2F4;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        #searchbar ::placeholder {
+            font-size: 15px;
+            color: #2B2D42;
+        }
+
+        .topnav {
+            justify-content: space-between;
+            display: flex;
+            height: 55px;
+            width: auto;
+            background-color: #D90429;
+            margin-top: none;
+            align-items: center;
+            padding: 10px;
+        }
+
+        #logo {
+            color: #EDF2F4;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #logofinal img {
+            width: 160px;
+            height: 800px;
+            margin-top: 60px;
+            margin-left: 0px;
+            border-radius: 20px;
+        }
+
+        #details {
+            display: flex;
+        }
+
+        input {
+            border: none;
+            background-color: #EDF2F4;
+            color: black;
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+        }
+
+        input:focus {
+            border: none;
+            border-width: 0px;
+            outline: none;
+        }
+
+        #details div {
+            width: fit-content;
+            height: 30px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: auto;
+            font-family: 'Montserrat', sans-serif;
+            color: #8D99AE;
+            font-size: 12px;
+        }
+
+        #button-holder {
+            cursor: pointer;
+            float: left;
+            height: 27px;
+            margin: 11px 11px 11px 11px;
+            text-align: center;
+            width: 50px;
+        }
+
+        #button-holder img {
+            margin: 4px;
+            width: 25px;
+            margin-left: 40px;
+        }
+
+        #cart-holder {
+            padding: auto;
+            cursor: pointer;
+            float: left;
+            height: 20px;
+            margin: 11px 11px 11px 11px;
+            text-align: center;
+            width: fit-content;
+        }
+
+        #cart-holder img {
+            padding: 5px;
+            margin: 1px;
+            width: 35px;
+        }
+
+        #login-holder {
+            padding: auto;
+            background-color: none;
+            cursor: pointer;
+            float: left;
+            height: 20px;
+            margin: 11px 11px 11px 11px;
+            text-align: center;
+            width: 35px;
+        }
+
+        #login-holder img {
+            margin: 1px;
+            width: 30px;
+        }
+
+        #signin {
+            padding-right: 10px;
+            width: 30px;
+        }
+
+        .slidershow {
+            width: 1475px;
+            height: 610px;
+            overflow: hidden;
+        }
+
+        .middle {
+            /* margin-top: 15px; */
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .bar {
+            width: 50px;
+            height: 10px;
+            border: 2px solid #fff;
+            margin: 6px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .bar:hover {
+            background: #fff;
+        }
+
+        input[name="r"] {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .slides {
+            width: 500%;
+            height: 100%;
+            display: flex;
+        }
+
+        .slide {
+            width: 20%;
+            transition: 0.6s;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #r1:checked~.s1 {
+            margin-left: 0;
+        }
+
+        #r2:checked~.s1 {
+            margin-left: -20%;
+        }
+
+        #r3:checked~.s1 {
+            margin-left: -40%;
+        }
+
+        #r4:checked~.s1 {
+            margin-left: -60%;
+        }
+
+        #r5:checked~.s1 {
+            margin-left: -80%;
+        }
+
+        .textbar {
+            /* place-content: auto ; */
+            background-color: #EF233C;
+            height: 35px;
+            width: 90%;
+            text-align: center;
+            color: #EDF2F4;
+            margin-left: 5%;
+            font-size: 20px;
+        }
+
+        #textcard {
+            background-image: url("C:/Users/ASUS/OneDrive/Desktop/TrippyWe/bg.jpg.jpeg");
+        }
+
+        .textcards {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            /* margin-bottom: 10px; */
+        }
+
+        .card {
+            border-radius: 13px;
+            border-color: #EDF2F4;
+            background: #EF233C;
+            width: fit-content;
+            padding: 10px;
+            margin-left: 15px;
+            /* border: 1px solid; */
+
+        }
+
+        .card:hover {
+            transform: scale(1.2);
+            transition: .5s;
+        }
+
+        .photo img {
+            height: 325px;
+            width: 325px;
+            border-radius: 10px;
+        }
+
+        .text {
+            text-align: center;
+            color: #EDF2F4;
+        }
+
+        #details img {
+            width: 38px;
+            border-radius: 6px;
+            background-color: #EDF2F4;
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+
+
+        /* REVIEW SECTION */
+
+
+        .revcard {
+            border-radius: 13px;
+            border-color: white;
+            color: white;
+            background: #EF233C;
+            width: fit-content;
+            padding: 10px;
+            margin-left: 15px;
+            width: 450px;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .revcard:hover {
+            transform: scale(1.1);
+            transition: .5s;
+        }
+
+        .cardrow {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .cardimg img {
+            height: 100px;
+            width: 100px;
+            margin-left: 38%;
+            ;
+        }
+
+        .stars {
+            margin-left: 37%;
+        }
+
+        .revname {
+            margin-left: 32%;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .revtext {
+            margin-left: 4%;
+            margin-bottom: 7px;
+        }
+
+        #footer {
+            background-color: #2B2D42;
+            width: 100%;
+            height: 500px;
+            color: #EDF2F4;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #footeralign {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px;
+        }
+
+        .footertext {
+            size: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footertext a {
+            color: white;
+        }
+
+        .footertext a :hover {
+            color: #D90429;
+        }
+
+        #footerlogo {
+            margin-left: 43%;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #footerlogo p {
+            font-size: 50px;
+            margin-left: -47px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #D90429;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .bookingform {
+            position: relative;
+            /* top: -537px; */
+            margin: 0px 0px;
+            background-image: url("pexels-luis-del-río-15286.jpg");
+            height: 700px;
+            padding-top: 85px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .booknow {
+
+            font-family: 'Poppins', sans-serif;
+            width: 450px;
+            height: fit-content;
+            background-color: white;
+            padding: 22px 8px;
+            box-shadow: 0 1rem 2rem #212121;
+            margin-left: 100px;
+
+
+        }
+
+
+        .booknow form .inputbox {
+            padding: 0px 17px;
+
+        }
+
+        .booknow form .inputbox input {
+            outline: none;
+            width: 91%;
+            padding: 14px 19px;
+            border: 2px solid rgb(194, 194, 194);
+            font-size: 20px;
+            color: #333;
+            text-transform: none;
+
+        }
+
+        .booknow form .inputbox h3 {
+            font-size: 18px;
+            padding: 7px 5px;
+            color: rgb(83, 81, 81);
+        }
+
+        #form_btn {
+            box-shadow: 2px 2px 10px black;
+            position: relative;
+            box-shadow: 2px 2px 10px black;
+            position: relative;
+            top: 16px;
+
+            text-align: center;
+            padding: 13px 27px;
+            /* margin: 4px 16px; */
+            border: none;
+            color: white;
+            background-color: #17dc26;
+            font-size: 28px;
+        }
+
+        #form_btn:hover {
+            cursor: pointer;
+            color: white;
+            background-color: red;
+            transform: scale(1.2) translateY(10px);
+            transition: .5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div id="logo">
+            <h3>TRIPpyWe!</h3>
+        </div>
+        <div id="searchbar">
+            <input type="text" name="searchbar" placeholder="Search Destination.....">
+            <div id='button-holder'>
+                <img src="icon1.png">
+            </div>
+        </div>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="loginpage.html">Log In</a>
+            <a href="signup form.html">Sign Up</a>
+            <a href="#">Destinations</a>
+            <a href="About Us.html">About Us</a>
+        </div>
+
+
+        <div id="details" class="yugam">
+            <span style="cursor:pointer" onclick="openNav()"><img src='icon3.png'></span>
+        </div>
+    </div>
+
+    <div class="slidershow middle">
+        <div class="slides">
+            <input type="radio" name="r" id="r1" checked>
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <input type="radio" name="r" id="r4">
+            <input type="radio" name="r" id="r5">
+            <div class="slide s1">
+                <img src="SS1.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="ss4.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="SS2.png" alt="">+-
+            </div>
+            <div class="slide">
+                <img src="ss3.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="ss5.jpg">
+            </div>
+        </div>
+        <div class=" navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+            <label for="r5" class="bar"></label>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section id="textcard">
+        <br><br>
+        <div class="textbar">
+            <h2>TRENDING &nbsp;PLACES</h2>
+        </div>
+        <br><br><br>
+        <div class="textcards" data-aos="fade-right">
+
+            <div class="card">
+                <a href="andaman_hotel.html">
+                    <div class="photo">
+                        <img src="andamanandnicobar_1.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>ANDAMAN AND NICOBAR </h3>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="goa_hotel.html">
+                    <div class="photo">
+                        <img src="goa_1.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>GOA</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="jammu&kashmir_hotel.html">
+                    <div class="photo">
+                        <img src="j_k_4.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>JAMMU AND KASHMIR</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <br><br><br><br>
+        <div class="textcards" data-aos="fade-right">
+            <div class="card">
+                <a href="ladakh_hotel.html">
+                    <div class="photo">
+                        <img src="ladakh_1.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>LADAKH</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="ooty_hotel.html">
+                    <div class="photo">
+                        <img src="ooty_3.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>OOTY</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="udaipur.html">
+                    <div class="photo">
+                        <img src="udaipur_3.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>UDAIPUR</h3>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+        <br><br>
+        <section id="iptbox"></section>
+        <div class="textbar">
+            <h2>BOOK&nbsp; YOUR&nbsp; ROOMS&nbsp; NOW !!</h2>
+        </div>
+        <br><br><br><br>
+        <div class="bookingform">
+            <div class="booknow">
+
+                <form action="">
+                    <div class="inputbox">
+                        <h3>PLACE</h3>
+                        <input type="text" placeholder="Destiantion Name">
+                    </div>
+                    <div class="inputbox">
+                        <h3>NUMBER OF GUESTS</h3>
+                        <input type="number" placeholder="Number of Guests">
+                    </div>
+                    <div class="inputbox">
+                        <h3>ARRIVALS</h3>
+                        <input type="date">
+                    </div>
+
+                    <div class="inputbox">
+                        <h3>DEPARTURE</h3>
+                        <input type="date">
+                    </div>
+                    <input type="submit" id="form_btn" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="reviewsection">
+        <br><br>
+        <div class="textbar">
+            <h2>WORDS &nbsp;FROM &nbsp;OUR &nbsp;VALUABLE&nbsp; CUSTOMERS</h2>
+        </div><br><br><br>
+        <div class="cardrow" data-aos="fade-right">
+            <div class="revcard">
+                <div class="cardimg">
+                    <img src="ppl1.png" alt="">
+                </div>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div><br>
+                <div class="revname">
+                    <b>CRISTIAN EVANS</b>
+                </div><br>
+                <div class="revtext">
+                    Best place on the internet to plan your travel. Hassle-free booking experience and great offers.
+                    Will definitely recommend to friends!
+                </div>
+            </div>
+            <div class="revcard">
+                <div class="cardimg">
+                    <img src="ppl2.png" alt="">
+                </div>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <!-- <i class='bx bxs-star'></i> -->
+                    <i class='bx bxs-star-half'></i>
+                    <i class='bx bx-star'></i>
+                </div><br>
+                <div class="revname">
+                    <b>EMMIE RHODES</b>
+                </div><br>
+                <div class="revtext">
+                    Amazing experience!! It helped me find the best deals and made my trip a lot easier. Thanks a
+                    lot TrippyWe..!
+                </div>
+            </div>
+            <div class="revcard">
+                <div class="cardimg">
+                    <img src="ppl3.png" alt="">
+                </div>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                    <!-- <i class='bx bxs-star-half'></i> -->
+                </div><br>
+                <div class="revname">
+                    <b>RAKESH SHARMA</b>
+                </div><br>
+                <div class="revtext">
+                    Had an outstanding stay at my hotel. Definitely one of the best travel sites on the web.
+                </div>
+            </div>
+        </div><br>
+        <div class="cardrow" data-aos="fade-right">
+            <div class="revcard">
+                <div class="cardimg">
+                    <img src="ppl4.png" alt="">
+                </div>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <!-- <i class='bx bxs-star'></i> -->
+                    <i class='bx bxs-star-half'></i>
+                </div><br>
+                <div class="revname">
+                    <b>AKSHAY GOYAL</b>
+                </div><br>
+                <div class="revtext">
+                    A very client friendly website with good customer support and easy cancellation processes with
+                    swift refunds.
+                </div>
+            </div>
+            <div class="revcard">
+                <div class="cardimg">
+                    <img src="ppl5.png" alt="">
+                </div>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <!-- <i class='bx bxs-star-half'></i> -->
+                </div><br>
+                <div class="revname">
+                    <b>KHUSHI SHARMA</b>
+                </div><br>
+                <div class="revtext">
+                    This site saved me a lot of time and money as it provided me with the cheapest price for the
+                    hotel of my choice out of all other sites.
+                </div>
+            </div>
+            <div class="revcard">
+                <div class="cardimg">
+                    <img src="ppl6.png" alt="">
+                </div>
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <!-- <i class='bx bxs-star'></i> -->
+                    <i class='bx bxs-star-half'></i>
+                </div><br>
+                <div class="revname">
+                    <b>JUSTIN PHILIPS</b>
+                </div><br>
+                <div class="revtext">
+                    Very impressive and reliable site. I booked my trip tickets in time span of just 5 mins. which
+                    is just outstanding. Thank You TRIPpyWe!!
+                </div>
+            </div>
+        </div>
+    </section> <br>
+    </section>
+    <footer id="footer">
+        <div id="footeralign">
+            <div class="footertext">
+                <h3>REACH US</h3>
+                <h5> <a href="#"><u> About Us </u></a> <br><br>
+                    <a href=""><u> Contact-</u> +91 1800-123-456(or 789)</a> <br><br>
+                    <a href=""><u>Address- </u><br> SCO-25,26,27 DLF Building 4, DLF CyberCity, Gurugram</a><br><br>
+                    <a href=""><u> Email-</u> trippywe.support@gmail.com <br> trippywe.customer@gmail.com</h5></a>
+            </div>
+            <div class="footertext">
+                <h3>HELP</h3>
+                <h5>
+                    <a href=""><u>Learn How TRIPpyWe! Works</u></a> <br><br>
+                    <a href=""><u>Terms and conditions</u></a> <br><br>
+                    <a href=""><u>Legal information</u></a> <br><br>
+                    <a href=""><u>Privacy notice</u></a> <br><br>
+                    <a href=""><u>Cyber Security</u></a>
+                </h5>
+            </div>
+        </div>
+        <div id="footerlogo">
+            <p> &nbsp; <b> TRIPpyWe!</b></p>
+            <h6>Copyright 2022 trippywe | All rights reserved.</h6>
+
+        </div>
+    </footer>
+
+
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "200px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+</html>
